@@ -1,0 +1,1 @@
+This project is intended to be a simple web app that tracks the books that I've read.
