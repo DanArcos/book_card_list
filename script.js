@@ -80,12 +80,14 @@ function updateDisplay() {
     book_table.appendChild(add_book_div)
 }
 
-//////////////
-//Add logic for new book button
+/////////////////////////////////
+//Add logic for new book card
 const add_book_div = document.createElement('div')
 add_book_div.classList.add("book_card")
 add_book_div.id = 'add_book_div'
 add_book_div.textContent = 'Add Book'
+
+//Hovering effects
 add_book_div.addEventListener('mouseover', (e)=> {
     //initiate tranisition to new class
     add_book_div.classList.add('hovering')
@@ -94,6 +96,8 @@ add_book_div.addEventListener('mouseleave', (e)=> {
     //initiate transition back
     add_book_div.classList.remove('hovering')
 })
+
+//Click
 add_book_div.addEventListener('click', (e)=>{
     //Make form displayable
     modal.style.display = "block";
@@ -108,6 +112,22 @@ const book_table = document.querySelector("#container");
 //Link up form table    
 const modal = document.getElementById('myModal')
 const book_form = document.querySelector("#popup_form")
+
+//Link up X out in the modal
+const span = document.getElementsByClassName("close")[0];
+span.addEventListener('click', (e)=> {
+    modal.style.display = 'none';
+})
+
+//Link up click outside of the modal content
+//You will naturally click on the modal which will then exit
+window.addEventListener("click", (e)=> {
+    console.log(e.target)
+    if (e.target == modal){
+        modal.style.display = 'none';
+    }
+})
+
 
 //Test Books
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false)
