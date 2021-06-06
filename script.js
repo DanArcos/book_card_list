@@ -76,11 +76,40 @@ function updateDisplay() {
         book_table.appendChild(book_card)
     })
 
-    
+    //Append the button to the end of the book table
+    book_table.appendChild(add_book_div)
 }
 
+//////////////
+//Add logic for new book button
+const add_book_div = document.createElement('div')
+add_book_div.classList.add("book_card")
+add_book_div.id = 'add_book_div'
+add_book_div.textContent = 'Add Book'
+add_book_div.addEventListener('mouseover', (e)=> {
+    //initiate tranisition to new class
+    add_book_div.classList.add('hovering')
+})
+add_book_div.addEventListener('mouseleave', (e)=> {
+    //initiate transition back
+    add_book_div.classList.remove('hovering')
+})
+add_book_div.addEventListener('click', (e)=>{
+    //Make form displayable
+    modal.style.display = "block";
+    
+    //update display after all fields have been inputted
+    //updateDisplay()
+})
+
+//Link up the book table
 const book_table = document.querySelector("#container");
 
+//Link up form table    
+const modal = document.getElementById('myModal')
+const book_form = document.querySelector("#popup_form")
+
+//Test Books
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false)
 const readyPlayerOne = new Book("Ready Player One", "Earnest Kline", 400, true)
 
@@ -101,7 +130,7 @@ console.log('Add first book: ' + theHobbit.title)
 addBookToLibrary(theHobbit)
 console.log("-------------------------")
 console.log('Add second book: ' + readyPlayerOne.title)
-addBookToLibrary(readyPlayerOne)
+//addBookToLibrary(readyPlayerOne)
 console.log("-------------------------")
 
-//updateDisplay()
+updateDisplay()

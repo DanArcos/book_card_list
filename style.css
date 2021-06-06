@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
 }
 
 .book_card{
@@ -27,4 +27,63 @@
     padding-bottom: 10px;
 }
 
-.book_read
+#add_book_div{
+    justify-content: center;
+    transition-duration: .1s;
+}
+
+.hovering {
+    background-color: pink;
+    scale: 1.05;
+}
+
+#popup_form{
+   
+}
+
+/*Div that encapsulates buttons*/
+#form_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+#form_buttons button{
+    width: 100px;
+}
+
+/*The modal background*/
+.modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal_content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+
+  .close{
+      color:grey;
+      float: right;
+           
+  }
+
+  .close:hover, .close:focus{
+      color:black;
+      cursor: pointer;
+  }
