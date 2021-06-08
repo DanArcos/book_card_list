@@ -62,9 +62,19 @@
     padding-bottom: 15px;
 }
 
-.book_read{
+.book_read_img:hover, :focus {
+    cursor: pointer;
+}
+
+.book_read_false{
     width:20%;
-    filter: grayscale(100%)
+    filter: grayscale(100%);
+    transition: .1s;
+}
+
+.book_read_true{
+    width:20%;
+    transition: .1s;
 }
 
 .book_read:hover, :focus{

@@ -63,7 +63,6 @@ function updateDisplay() {
             console.log(myLibrary)
 
             updateDisplay()
-            return false;
         })
 
         let top_right = document.createElement('div')
@@ -84,8 +83,22 @@ function updateDisplay() {
 
         let book_read = document.createElement('img')
         book_read.src = 'https://www.poornima.edu.in/wp-content/uploads/2020/08/green-circle-check-mark-confirmation-tick-marks-vector-21826245.jpg'
-        book_read.classList.add('book_read')
-        
+        book_read.classList.add('book_read_img')
+        book_read.classList.add('book_read_false') //Sets read to false by default
+        book_read.addEventListener('click', (e)=> {
+            //Toggle read
+            if(book.read === false){
+                book.read = true;
+                book_read.classList.remove('book_read_false')
+                book_read.classList.add('book_read_true')
+            }
+            else {
+                book.read = false;
+                book_read.classList.add('book_read_false')
+                book_read.classList.remove('book_read_true')
+            }
+        })
+
         //console.log('Creating book card')
         book_card.appendChild(top_row)
         book_card.appendChild(book_title)
