@@ -16,7 +16,7 @@
 
             <span class = 'close'>X</span>
 
-            <form>
+            <form onsubmit="return false">
             
                 <label for="book_name">Book Title:</label> <br>
                 <input type="text" id="form_book_name" name="book_name" value="value" required><br><br>
@@ -27,7 +27,7 @@
                 <label for="book_pages">Number of Pages:</label> <br>
                 <input type="number" id="form_book_pages" name="book_pages" value="value" required min='0'><br><br>
 
-                <button type = 'button' id = 'submit_button'>Add Book</button>
+                <button type = 'submit' id = 'submit_button'>Add Book</button>
                 
             </form>
     

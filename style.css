@@ -11,12 +11,47 @@
     
     align-items: center;
     border: 1px solid black;
-    background-color: rgb(244,244,244);
+    border-radius: 5%;
+    background-color: rgb(67, 67, 67);
     width: 250px;
     height: 300px;
+    color: white;
+}
+
+.book_card_top_row{
+
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
+    padding-top: 5px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.top_left{
+    color: white;
+    transition: .25s;
+    padding-left: 10px;
+}
+
+.top_left:hover, :focus {
+    color: red;
+    cursor: pointer;
+}    
+
+.top_right{
+    transition: .25s;
+    padding-right: 10px;
+}
+
+.top_right:hover, :focus{
+    color: red;
+    cursor: pointer;
 }
 
 .book_title{
+    margin-top: 50px;
     padding-top: 10px;
     padding-bottom: 15px;
     background-color:rgba(150, 0, 50, 1.0)
@@ -24,7 +59,16 @@
 
 .book_author{
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+}
+
+.book_read{
+    width:20%;
+    filter: grayscale(100%)
+}
+
+.book_read:hover, :focus{
+    cursor: pointer;
 }
 
 #add_book_div{
@@ -35,10 +79,6 @@
 .hovering {
     background-color: pink;
     scale: 1.05;
-}
-
-#popup_form{
-   
 }
 
 /*Div that encapsulates buttons*/
