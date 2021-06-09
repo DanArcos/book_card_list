@@ -1,8 +1,28 @@
+body {
+    font-family: Roboto, Arial;
+}
+
+#nav_bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: grey;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
 #container{
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
+    margin-left: 100px;
 }
 
 .book_card{
@@ -16,6 +36,7 @@
     width: 250px;
     height: 300px;
     color: white;
+    font-size: 25px;
 }
 
 .book_card_top_row{
@@ -46,15 +67,14 @@
 }
 
 .top_right:hover, :focus{
-    color: red;
+    color: gold;
     cursor: pointer;
 }
 
 .book_title{
-    margin-top: 50px;
+    margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 15px;
-    background-color:rgba(150, 0, 50, 1.0)
 }
 
 .book_author{
@@ -64,18 +84,24 @@
 
 .book_read_img:hover, :focus {
     cursor: pointer;
+    scale: 1.75;    
 }
 
 .book_read_false{
-    width:20%;
-    filter: grayscale(100%);
+    margin-top: 60px;
+    padding-top: 15px;
     transition: .1s;
+    scale: 1.5;
 }
 
-.book_read_true{
-    width:20%;
+.book_read_true {
+    margin-top: 60px;
+    padding-top: 15px;
     transition: .1s;
+    scale: 1.5;
+    color: green;
 }
+
 
 .book_read:hover, :focus{
     cursor: pointer;
@@ -87,7 +113,8 @@
 }
 
 .hovering {
-    background-color: pink;
+    background-color: rgb(180, 180, 180);
+    color: black;
     scale: 1.05;
 }
 
@@ -137,3 +164,14 @@
       color:black;
       cursor: pointer;
   }
+
+.close1{
+    color:grey;
+    float: right;
+         
+}
+
+.close1:hover, .close1:focus{
+    color:black;
+    cursor: pointer;
+}

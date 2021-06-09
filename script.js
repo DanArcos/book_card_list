@@ -41,9 +41,10 @@ function updateDisplay() {
         let top_row = document.createElement('div')
         top_row.classList.add('book_card_top_row')
 
-        let top_left = document.createElement('div')
+        let top_left = document.createElement('span')
         top_left.classList.add("top_left")
-        top_left.textContent = "X"
+        top_left.classList.add('material-icons')
+        top_left.textContent = "clear"
         top_left.addEventListener('click', (e)=>{
             console.log("Clicked X")
             console.log('target ' + e.target)
@@ -59,15 +60,16 @@ function updateDisplay() {
                 myLibrary.splice(e.target.parentElement.parentElement.dataset.index_number,1)
             }
             
-            console.log("After array")
-            console.log(myLibrary)
+            //console.log("After array")
+            //console.log(myLibrary)
 
             updateDisplay()
         })
 
-        let top_right = document.createElement('div')
+        let top_right = document.createElement('span')
+        top_right.classList.add('material-icons')
         top_right.classList.add('top_right')
-        top_right.textContent = "Ed"
+        top_right.textContent = "edit"
         
         top_row.appendChild(top_left)
         top_row.appendChild(top_right)
@@ -80,11 +82,14 @@ function updateDisplay() {
         let book_author = document.createElement('div')
         book_author.classList.add('book_author')
         book_author.textContent = book.author;
-
-        let book_read = document.createElement('img')
-        book_read.src = 'https://www.poornima.edu.in/wp-content/uploads/2020/08/green-circle-check-mark-confirmation-tick-marks-vector-21826245.jpg'
+        
+        let book_read = document.createElement('span')
+        book_read.classList.add('material-icons')
         book_read.classList.add('book_read_img')
-        book_read.classList.add('book_read_false') //Sets read to false by default
+        book_read.classList.add('book_read_false')
+        book_read.textContent = 'done'
+        
+
         book_read.addEventListener('click', (e)=> {
             //Toggle read
             if(book.read === false){
@@ -105,7 +110,6 @@ function updateDisplay() {
         book_card.appendChild(book_author)
         book_card.appendChild(book_read)
 
-        
         //console.log('Attaching book card to list')
         master_table.appendChild(book_card)
 
@@ -136,13 +140,11 @@ add_book_div.addEventListener('mouseleave', (e)=> {
     add_book_div.classList.remove('hovering')
 })
 
-//What happens when we click the book
+//Open New Book Form When add Book Block is selected
 add_book_div.addEventListener('click', (e)=>{
     //Make form displayable
     modal.style.display = "block"; 
 })
-
-
 
 /////////////////FORM LOGIC////////////////////////
 //Link up form table    
@@ -157,8 +159,8 @@ span.addEventListener('click', (e)=> {
 //Link up click outside of the modal content
 //You will naturally click on the modal which will then exit
 window.addEventListener("click", (e)=> {
-    console.log('Adding New Book...')
-    console.log(e.target)
+    //console.log('Adding New Book...')
+    //console.log(e.target)
     if (e.target == modal){
         modal.style.display = 'none';
     }
@@ -167,9 +169,9 @@ window.addEventListener("click", (e)=> {
 const sub_button = document.getElementById("submit_button")
 sub_button.addEventListener('click', (e) => {
     
-    let form_book_name = document.getElementById('form_book_name').value;
-    let form_book_author = document.getElementById('form_book_author').value;
-    let form_book_pages = Number(document.getElementById('form_book_pages').value);
+    let form_book_name = document.getElementById('book_name').value;
+    let form_book_author = document.getElementById('book_author').value;
+    let form_book_pages = Number(document.getElementById('book_pages').value);
 
     console.log('--------------------')
     console.log('processing new book')
@@ -183,6 +185,8 @@ sub_button.addEventListener('click', (e) => {
     modal.style.display = 'none'; //Close modal display 
 
 })
+
+const edit_modal = document.getElementById('myModal_edit')
 
 //Test Books
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false)
