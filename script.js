@@ -169,14 +169,14 @@ window.addEventListener("click", (e)=> {
 const sub_button = document.getElementById("submit_button")
 sub_button.addEventListener('click', (e) => {
     
-    let form_book_name = document.getElementById('book_name').value;
-    let form_book_author = document.getElementById('book_author').value;
-    let form_book_pages = Number(document.getElementById('book_pages').value);
+    let form_book_name = document.getElementById('new_book_name').value;
+    let form_book_author = document.getElementById('new_book_author').value;
+    //let form_book_pages = Number(document.getElementById('new_book_pages').value);
 
     console.log('--------------------')
     console.log('processing new book')
 
-    let new_book = new Book(form_book_name, form_book_author, form_book_pages, false) //Add a new book
+    let new_book = new Book(form_book_name, form_book_author, 0, false) //Add a new book
     console.log(new_book.info())
     addBookToLibrary(new_book, myLibrary)
 

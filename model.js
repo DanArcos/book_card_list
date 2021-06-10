@@ -26,6 +26,9 @@ function addBookToLibrary(book, array) {
 
         updateDisplay()
     }
+    else{
+        console.log("ERROR, NOT A BOOK TYPE")
+    }
     
     
 }

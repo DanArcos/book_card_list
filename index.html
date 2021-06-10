@@ -25,19 +25,24 @@
             <span class = 'close'>X</span>
 
             <!--Code For Form-->
-            <form id = "new_book_form">
+            <form id = "new_book_form" onsubmit="return false">
             
-                <label for="book_name">Book Title:</label> <br>
-                <input type="text" id="book_name" name="book_name" 
+                <label for="new_book_name">Book Title:</label> <br>
+                <input type="text" class="new_book_input" id="new_book_name" name="new_book_name" 
                 placeholder="Book Title..." required><br><br>
                 
-                <label for="book_author">Author:</label> <br>
-                <input type="text" id="book_author" name="book_author"
+                <label for="new_book_author">Author:</label> <br>
+                <input type="text" class="new_book_input" id="new_book_author" name="new_book_author"
                 placeholder="Book Author..." required><br><br>
                 
-                <label for="book_pages">Number of Pages:</label><br>
-                <input type="number" id="book_pages" name="book_pages"
-                min='0' required><br><br>
+                <!--
+                <label for="new_book_pages">Pages:</label><br>
+                <input type="text"  id="new_book_pages" name="new_book_pages"
+                placeholder="Pages..." required ><br><br>-->
+
+                <!--Code For Form
+                <label for="new_book_pages">Pages:</label><br>
+                <input type="number" id="new_book_pages" name="new_book_pages" required><br><br> -->
 
                 <input type = 'submit' id='submit_button' value = 'Add Book'>
                 
