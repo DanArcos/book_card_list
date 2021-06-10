@@ -141,7 +141,12 @@ const add_book_div = document.createElement('div')
 add_book_div.classList.add("book_card")
 add_book_div.classList.add("add_book")
 add_book_div.id = 'add_book_div'
-add_book_div.textContent = 'Add Book'
+
+const inner_div = document.createElement('div')
+inner_div.style.scale = "1.6"
+inner_div.classList.add("material-icons")
+inner_div.textContent = 'add_circle_outline'
+add_book_div.appendChild(inner_div)
 
 //Hovering effects
 add_book_div.addEventListener('mouseover', (e)=> {

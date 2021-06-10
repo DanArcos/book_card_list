@@ -14,6 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 40px;
+    color: white;
 }
 
 #container{
@@ -174,4 +175,16 @@ body {
 .close_edit:hover, .close_edit:focus{
     color:black;
     cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
