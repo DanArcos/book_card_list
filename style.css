@@ -165,13 +165,13 @@ body {
       cursor: pointer;
   }
 
-.close1{
+.close_edit{
     color:grey;
     float: right;
          
 }
 
-.close1:hover, .close1:focus{
+.close_edit:hover, .close_edit:focus{
     color:black;
     cursor: pointer;
 }

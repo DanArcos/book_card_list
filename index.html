@@ -52,6 +52,34 @@
 
     </div>
     
+    <!--Code For Modal-->
+    <div id = 'myModal_edit' class = 'modal'>
+
+        <!--Code For Modal Content-->
+        <div class = 'modal_content'>
+
+            <span class = 'close_edit'>X</span>
+
+            <!--Code For Form-->
+            <form id = "edit_book_form" onsubmit="return false">
+            
+                <label> Edit Book: </label> <br><br>
+                
+                <input type="text" id="edit_book_name" name="edit_book_name" 
+                placeholder="Book Title..." required><br><br>
+                
+                <input type="text" id="edit_book_author" name="edit_book_author"
+                placeholder="Book Author..." required><br><br>
+
+                <input type = 'submit' id='submit_button_edit' value = 'Finish'>
+                
+            </form>
+    
+        </div>
+
+    </div>
+
+
 </body>
 
 <script src = 'script.js' type = 'module'></script>

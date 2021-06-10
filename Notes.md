@@ -1,7 +1,7 @@
 6/9/2021
 
 To DOs:
-1. Implement Editting Feature of Card
+1. Implement Editing Feature of Card
 - Add an event listener to the pencil attribute.
 - Retrieve index number of item that objedcdt represents.
 - Open up form with current attributes (title, author)

@@ -15,8 +15,7 @@ function updateDisplay() {
     let counter = 0;
     
     //destroy all current books
-    //console.log('Destroying Current Display ')
-    //console.log('Removing elements')
+    console.log('Clearing all old content')
     document.querySelectorAll(".book_card").forEach(element => {
         //console.log('Removing:' + element.id)
         element.remove();
@@ -28,7 +27,7 @@ function updateDisplay() {
     console.log('Iterating through books to populate divs')
     myLibrary.forEach(book => {
         //console.log('current book counter: ' + counter)
-        //console.log(book.title)
+        console.log(book)
         
         //Create overall card div
         let book_card = document.createElement('div')
@@ -66,19 +65,33 @@ function updateDisplay() {
             updateDisplay()
         })
 
-        let top_right = document.createElement('span')
+        //Link up Top Right X
+        let top_right = document.createElement('span') //Create Span for material Icon
         top_right.classList.add('material-icons')
         top_right.classList.add('top_right')
         top_right.textContent = "edit"
-        
+        top_right.addEventListener('click', (e)=>{
+            console.log("Clicked the Pencil")
+            let card_index = e.target.parentElement.parentElement.dataset.index_number 
+            //console.log(myLibrary[card_index])
+            edit_modal.style.display = "block";
+            edit_modal.dataset.index_number = card_index
+            document.querySelector('#edit_book_name').value = myLibrary[card_index].title
+            document.querySelector('#edit_book_author').value = myLibrary[card_index].author
+
+            //console.log(edit_modal.dataset.index_number)
+        })
+
+        //Append divs to the top row element
         top_row.appendChild(top_left)
         top_row.appendChild(top_right)
         
-
+        //Create Book title div
         let book_title = document.createElement('div')
         book_title.classList.add('book_title')
         book_title.textContent = book.title;
 
+        //Create Book author div
         let book_author = document.createElement('div')
         book_author.classList.add('book_author')
         book_author.textContent = book.author;
@@ -187,6 +200,29 @@ sub_button.addEventListener('click', (e) => {
 })
 
 const edit_modal = document.getElementById('myModal_edit')
+const sub_edit_button = document.getElementById('submit_button_edit')
+sub_edit_button.addEventListener('click', (e)=>{
+    myLibrary[edit_modal.dataset.index_number].title = document.querySelector('#edit_book_name').value
+    myLibrary[edit_modal.dataset.index_number].author = document.querySelector('#edit_book_author').value
+
+    edit_modal.style.display = 'none';
+
+    updateDisplay()
+})
+
+const span_edit = document.getElementsByClassName("close_edit")[0];
+span_edit.addEventListener('click', (e)=> {
+    edit_modal.style.display = 'none';
+})
+
+window.addEventListener("click", (e)=> {
+    //console.log('Adding New Book...')
+    //console.log(e.target)
+    if (e.target == edit_modal){
+        edit_modal.style.display = 'none';
+    }
+})
+
 
 //Test Books
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false)
